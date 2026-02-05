@@ -1,12 +1,16 @@
 'use client'
 
 import { SparklesCore } from '@/components/ui/sparkles'
+import { AnimatedBackground } from '@/components/animated-background'
 
 export default function Page() {
   return (
     <div className="relative w-full bg-black overflow-x-hidden">
+      {/* Animated Character Background */}
+      <AnimatedBackground />
+
       {/* Fixed Sparkles Background - Full viewport coverage */}
-      <div className="fixed inset-0 w-screen h-screen pointer-events-none z-0">
+      <div className="fixed inset-0 w-screen h-screen pointer-events-none z-5">
         <SparklesCore
           id="tsparticles"
           background="transparent"
