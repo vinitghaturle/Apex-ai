@@ -1,14 +1,15 @@
 'use client'
 
+import CountdownTimer from "./Countdown"
+
 export function Hero() {
   return (
-    <section className="relative h-screen overflow-hidden">
+    <section className="relative h-screen overflow-hidden ">
 
-     
       <div className="relative z-10 h-full flex items-center">
 
         
-        <div className="w-1/2 h-full flex items-center justify-start overflow-hidden ">
+        <div className="w-1/2 h-full flex items-center justify-start overflow-hidden">
           <img
             src="/Removal-803.png"
             alt="Apex AI Characters"
@@ -16,22 +17,28 @@ export function Hero() {
           />
         </div>
 
-        {/* RIGHT : Text */}
-        <div className="w-1/2 flex flex-col justify-center items-start px-16">
-          <h1 className="font-joffrey text-6xl md:text-8xl font-bold text-white mb-6">
+        
+        <div className="w-1/2 flex flex-col justify-center items-center px-16">
+
+          <h1 className="font-joffrey text-7xl md:text-8xl text-white mb-6">
             Apex-ai
           </h1>
-          <p className="text-xl md:text-2xl text-gray-100 mb-8 max-w-xl">
+
+          <p className="text-xl md:text-2xl text-gray-100 mb-8 text-center max-w-2xl">
             The future of artificial intelligence awaits
           </p>
-          <button className="px-8 py-4 bg-white text-black font-semibold rounded-lg hover:bg-gray-200 transition transform hover:scale-105">
+
+          
+          <CountdownTimer />
+          
+          <button className="mt-12 px-10 py-4 bg-white  font-semibold text-lg rounded-full hover:bg-gray-100 transition transform hover:scale-105 shadow-lg">
             Explore Now
           </button>
+         
         </div>
-
       </div>
 
-      {/* Floating SVGs (non-colliding, subtle) */}
+      
       <div className="absolute inset-0 pointer-events-none">
         <img
           src="/ico-red-player.svg"
