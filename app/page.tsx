@@ -6,6 +6,7 @@ import { Hero } from '@/components/hero'
 import Navbar from "@/components/nav"
 import Tracks from '@/components/tracks'
 import { Time } from "@/components/time";
+import { HorizontalTimeline } from "@/components/AmongUsTimeline";
 
 const timelineData = [
   {
@@ -77,7 +78,8 @@ export default function Page() {
         <Navbar />
         <Hero />
         <Tracks />
-        <Time data={timelineData} />
+        {/* <Time data={timelineData} /> */}
+        <HorizontalTimeline data={timelineData} />
 
         {/* Section 2 - Features */}
         <section className="min-h-screen flex flex-col items-center justify-center py-20 px-4">
