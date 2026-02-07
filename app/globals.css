@@ -20,8 +20,6 @@ body {
   font-display: swap;
 }
 
-
-
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -103,6 +101,9 @@ body {
 .horizontal-card {
   scrollbar-width: none;
 }
+  .theme {
+    --animate-orbit: orbit calc(var(--duration)*1s) linear infinite;
+  }
 }
 
 @layer base {
@@ -111,5 +112,16 @@ body {
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@theme inline {
+  @keyframes orbit {
+  0% {
+    transform: rotate(calc(var(--angle) * 1deg)) translateY(calc(var(--radius) * 1px)) rotate(calc(var(--angle) * -1deg));
+    }
+  100% {
+    transform: rotate(calc(var(--angle) * 1deg + 360deg)) translateY(calc(var(--radius) * 1px)) rotate(calc((var(--angle) * -1deg) - 360deg));
+    }
   }
 }

@@ -7,6 +7,12 @@ import Navbar from "@/components/nav"
 import Tracks from '@/components/tracks'
 import { Time } from "@/components/time";
 import { HorizontalTimeline } from "@/components/AmongUsTimeline";
+import { Imposter } from "@/components/imposter";
+import { Crew } from "@/components/crew";
+import { CommunityPartner } from "@/components/communityPartner";
+import Footer from "@/components/Footer";
+import CTA from "@/components/CTA";
+import AboutUS from "@/components/AboutUS";
 
 const timelineData = [
   {
@@ -50,7 +56,41 @@ const timelineData = [
     ),
   },
 ];
+const facultyMembers = [
+  {
+  imageSrc: "/Removal-803.png",
+  name: "Pranay sir",
+  role: "Lead Researcher"
+},
 
+{
+  imageSrc: "/Removal-803.png",
+  name: "Dr. Alan Turing",
+  role: "Lead Researcher"
+}
+];
+const teamMembers = [
+  {
+  imageSrc: "/Removal-803.png",
+  name: "Soham Kale",
+  role: "Technorian President"
+},
+{
+  imageSrc: "/Removal-803.png",
+  name: "Karan Dubey",
+  role: "APEX - AI Lead"
+},
+{
+  imageSrc: "/Nandini.jpeg",
+  name: "Nandini Jaiswal",
+  role: "Organizer - GDGoC GHRCE"
+},
+{
+  imageSrc: "/prince.jpeg",
+  name: "Prince Rayamwar",
+  role: "Chair, IEEE CS SB"
+}
+];
 export default function Page() {
   const [done, setDone] = useState(false);
   return (
@@ -77,9 +117,68 @@ export default function Page() {
         {/* Section 1 - Hero */}
         <Navbar />
         <Hero />
+        <AboutUS />
         <Tracks />
         {/* <Time data={timelineData} /> */}
         <HorizontalTimeline data={timelineData} />
+        <div className="relative min-h-screen">
+        <div className="absolute top-[9rem] left-1/2 -translate-x-1/2 z-50">
+        <img 
+          loading="lazy" 
+          src="impofac.png" 
+          className="w-[25vw] h-auto object-contain opacity-80" 
+          alt="The Faculty Header" 
+        />
+      </div>
+      <div className="flex flex-wrap items-center justify-center gap-10 pt-[9.5rem] px-10 scale-90 ">
+        {facultyMembers.map((member, index) => (
+          <div key={index} className="w-full lg:w-[30%] max-w-md flex justify-center ">
+             <Imposter data={member} />
+          </div>
+        ))}
+      </div>
+      </div>
+      
+
+      <div className="relative min-h-screen">
+        <div className="absolute top-[9rem] left-1/2 -translate-x-1/2 z-50">
+        <img 
+          loading="lazy" 
+          src="crewteam.png" 
+          className="w-[25vw] h-auto object-contain opacity-85" 
+          alt="The team Header" 
+        />
+      </div>
+      <div className="flex flex-wrap items-center justify-center gap-2 pt-[9.5rem] px-10 scale-75 ">
+        {teamMembers.map((member, index) => (
+          <div key={index} className="w-full lg:w-[30%] max-w-md flex justify-center ">
+             <Crew data={member} />
+          </div>
+        ))}
+      </div>
+      </div>
+      <div className="relative ">
+       <div className="absolute top-8 w-full text-center animate-bounce">
+      {/* Title with Custom Text Stroke */}
+      <h2 
+        className="font-display text-4xl md:text-6xl text-white drop-shadow-[4px_4px_0_rgba(0,0,0,1)] mb-2 [text-stroke:1px_black] [-webkit-text-stroke:1px_black]"
+      >
+        THE ALLIANCE
+      </h2>
+
+      {/* Subtitle Badge */}
+      <p className="inline-block rounded-full border border-gray-600 bg-black/50 px-4 py-1 text-lg font-bold tracking-wide text-gray-300 backdrop-blur-sm md:text-xl">
+        Community Partners
+      </p>
+    </div>    
+
+           
+            
+                 <CommunityPartner />
+            
+          </div>  
+
+
 
         {/* Section 2 - Features */}
         <section className="min-h-screen flex flex-col items-center justify-center py-20 px-4">
@@ -104,42 +203,11 @@ export default function Page() {
           </div>
         </section>
 
-        {/* Section 3 - About */}
-        <section className="min-h-screen flex flex-col items-center justify-center py-20 px-4">
-          <div className="max-w-3xl">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-8 text-center">
-              About Us
-            </h2>
-            <p className="text-lg text-gray-300 mb-6">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. The sparkles effect creates a beautiful background that stays fixed as you scroll.
-            </p>
-            <p className="text-lg text-gray-300">
-              Try scrolling down to see how the effect behaves across different sections. The particles remain in place while your content scrolls over them, creating a stunning visual experience.
-            </p>
-          </div>
-        </section>
-
         {/* Section 4 - CTA */}
-        <section className="min-h-screen flex flex-col items-center justify-center py-20 px-4">
-          <div className="text-center">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Ready to Get Started?
-            </h2>
-            <p className="text-xl text-gray-300 mb-8 max-w-2xl">
-              Join thousands of users who are already building amazing products
-            </p>
-            <button className="px-8 py-3 bg-white text-black font-semibold rounded-lg hover:bg-gray-200 transition">
-              Start Now
-            </button>
-          </div>
-        </section>
+        <CTA />
 
         {/* Section 5 - Footer */}
-        <section className="py-20 px-4 text-center border-t border-gray-800">
-          <p className="text-gray-400">
-            © 2024 Your Company. All rights reserved.
-          </p>
-        </section>
+        <Footer />
       </div>
     </div>
     )}
